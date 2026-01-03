@@ -17,17 +17,17 @@
 ```mermaid
 graph TD
     subgraph "ユーザー環境"
-        User[<i class="fa fa-user"></i> 応募者]
-        Browser[<i class="fa fa-window-maximize"></i> ブラウザ]
+        User["<i class='fa fa-user'></i> 応募者"]
+        Browser["<i class='fa fa-window-maximize'></i> ブラウザ"]
     end
 
     subgraph "Vercel (ホスティング)"
-        NextApp[<i class="fa fa-code"></i> Next.js Frontend]
-        MockCMS[<i class="fa fa-file-code"></i> Mock CMS (lib/cms.ts)]
+        NextApp["<i class='fa fa-code'></i> Next.js Frontend"]
+        MockCMS["<i class='fa fa-file-code'></i> Mock CMS (lib/cms.ts)"]
     end
 
     subgraph "外部サービス (将来導入)"
-        RealCMS[<i class="fa fa-database"></i> Headless CMS]
+        RealCMS["<i class='fa fa-database'></i> Headless CMS"]
     end
 
     User -- "HTTPS" --> Browser
