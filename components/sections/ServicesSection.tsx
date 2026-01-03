@@ -2,23 +2,27 @@
 
 import { motion } from "framer-motion"
 import { Monitor, Cpu, Network } from "lucide-react"
+import Image from "next/image"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card"
 
 const services = [
     {
         icon: Monitor,
         title: "医師向けAI診断支援SaaS",
-        description: "診断業務を効率化し、医師が患者と向き合う時間を最大化します。"
+        description: "診断業務を効率化し、医師が患者と向き合う時間を最大化します。",
+        image: "/services/diagnostic-saas.png"
     },
     {
         icon: Cpu,
         title: "画像診断AI解析",
-        description: "X線、MRI、CT画像をAIが解析し、病変の早期発見をサポートします。"
+        description: "X線、MRI、CT画像をAIが解析し、病変の早期発見をサポートします。",
+        image: "/services/image-analysis.png"
     },
     {
         icon: Network,
         title: "電子カルテ連携クラウド",
-        description: "施設間でのスムーズな情報共有を実現し、チーム医療を推進します。"
+        description: "施設間でのスムーズな情報共有を実現し、チーム医療を推進します。",
+        image: "/services/cloud-integration.png"
     }
 ]
 
@@ -42,14 +46,22 @@ export function ServicesSection() {
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             viewport={{ once: true }}
                         >
-                            <Card className="h-full shadow-md hover:shadow-xl transition-shadow cursor-default">
+                            <Card className="h-full shadow-md hover:shadow-xl transition-shadow cursor-default overflow-hidden flex flex-col">
+                                <div className="relative w-full aspect-video">
+                                    <Image
+                                        src={service.image}
+                                        alt={service.title}
+                                        fill
+                                        className="object-cover transition-transform duration-500 hover:scale-105"
+                                    />
+                                </div>
                                 <CardHeader>
                                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent">
                                         <service.icon className="h-6 w-6" />
                                     </div>
                                     <CardTitle className="text-xl">{service.title}</CardTitle>
                                 </CardHeader>
-                                <CardContent>
+                                <CardContent className="flex-grow">
                                     <p className="text-muted-foreground">{service.description}</p>
                                 </CardContent>
                             </Card>
