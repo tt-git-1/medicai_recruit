@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a; /* Slate 900 */
+  
+  /* Trust Blue */
+  --primary: #2563eb; /* Blue 600 */
+  --primary-foreground: #ffffff;
+
+  /* Clean Surface */
+  --secondary: #f8fafc; /* Slate 50 */
+  --secondary-foreground: #0f172a;
+
+  /* Health/Growth Green */
+  --accent: #10b981; /* Emerald 500 */
+  --accent-foreground: #ffffff;
+
+  --muted: #f1f5f9; /* Slate 100 */
+  --muted-foreground: #64748b; /* Slate 500 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a; /* Slate 900 */
+    --foreground: #f8fafc; /* Slate 50 */
+    
+    --primary: #3b82f6; /* Blue 500 */
+    --primary-foreground: #ffffff;
+
+    --secondary: #1e293b; /* Slate 800 */
+    --secondary-foreground: #f8fafc;
+
+    --accent: #34d399; /* Emerald 400 */
+    --accent-foreground: #0f172a;
+
+    --muted: #1e293b; /* Slate 800 */
+    --muted-foreground: #94a3b8; /* Slate 400 */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
